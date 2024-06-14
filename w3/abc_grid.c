@@ -21,29 +21,11 @@ int main(){
     char print;
 
     for (int i = 0; i < row; i++)
-    {
-         
-        for (int j = 0; j < col; j++)
-        {
-            if (j<=x )
-            {
-                print=abs(letter- start_letter +x+y-j)%26+start_letter;  
-                printf("%c", print);
-                
-            }
-            else {
-                print=abs(letter- start_letter +y-1+j-col/2)%26+start_letter;
-                printf("%c", print);      
-
-             
-            }
-            
-        }
-        if (i<=y)
-        {
-            y--;
-        }else{
-            y++;
+    { 
+        for (int j = 0; j < col; j++){
+            int distance = abs(x-i)+abs(y-j);
+            int print = (letter - start_letter + distance)%26 + start_letter;
+            printf("%c", print);
         }
         
         printf("\n");
@@ -51,7 +33,5 @@ int main(){
         
     }
     
-
-
     return 0;
 }
